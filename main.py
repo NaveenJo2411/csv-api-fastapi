@@ -19,10 +19,11 @@ app = FastAPI(lifespan=lifespan)
 @app.get("/flat-records")
 def flat_records(skip: int = 0, limit: int = 10):
     # return JSONResponse(content=data[skip: skip + limit])
-    total = len(data)
-    return{
-        "data" : data[skip: skip + limit],
-        "total" : total,
-        "skip"  : skip,
-        "limit" : limit 
-    }
+    # total = len(data)
+    # return{
+    #     "data" : data[skip: skip + limit],
+    #     "total" : total,
+    #     "skip"  : skip,
+    #     "limit" : limit 
+    # }
+    return data[skip: skip + limit]
