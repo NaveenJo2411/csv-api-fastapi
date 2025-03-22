@@ -16,8 +16,8 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-@app.get("/records")
-def get_records(skip: int = 0, limit: int = 10):
+@app.get("/flat-records")
+def flat_records(skip: int = 0, limit: int = 10):
     # return JSONResponse(content=data[skip: skip + limit])
     total = len(data)
     return{
